@@ -3,7 +3,7 @@
 
 ## External materials
 - Distinctive Image Features from Scale-Invariant Keypoints [paper](../_materials/sift_highlighted.pdf)
-
+- SIFT: Theory and Practice. I prefer :) [page link](https://aishack.in/tutorials/sift-scale-invariant-feature-transform-introduction/)
 - OpenCV - Introduction to SIFT (Scale-Invariant Feature Transform) [link](https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html)
 - Analytics Vidhya - A Detailed Guide to the Powerful SIFT Technique for Image Matching [link](https://www.analyticsvidhya.com/blog/2019/10/detailed-guide-powerful-sift-technique-image-matching-python/)
 - YouTube - First Principles of Computer Vision - Overview | SIFT Detector [link](https://www.youtube.com/watch?v=KgsHoJYJ4S8)
@@ -21,5 +21,19 @@
   that uses efficient algorithms to identify candidate locations that are then examined in further
   detail.
 - Difference of gaussian - DoG
-- Find scale space extremes (min, max): 
+
+### 2. Keypoint localization
+- Find scale space extremes (min, max):
 In order to detect the local maxima and minima of D(x, y, σ), each sample point is compared to its eight neighbors in the current image and nine neighbors in the scale above and below. It is selected only if it is larger than all of these neighbors or smaller than all of them
+
+#### Keypoint filtering
+We are localize a many keypoints which are not relevant. We apply multiple keypoint filtering blunts:
+- **Removing low contrast features:** This is simple. If the magnitude of the intensity (i.e., without sign) at the current pixel in the DoG image (that is being checked for minima/maxima) is less than a certain value, it is rejected.
+- **Removing edges:** The idea is to calculate (hessian) two gradients at the keypoint. Both perpendicular to each other. Based on the image around the keypoint, three possibilities exist. The image around the keypoint can be:
+  - **A flat region:** If this is the case, both gradients will be small. 
+  - **An edge:** Here, one gradient will be big (perpendicular to the edge) and the other will be small (along the edge)
+  - **A "corner":** Here, both gradients will be big.
+
+### 3. Keypoint assignment
+
+### 4. Keypoint descriptor
