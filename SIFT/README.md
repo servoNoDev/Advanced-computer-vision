@@ -9,6 +9,7 @@
 - YouTube - First Principles of Computer Vision - Overview | SIFT Detector [link](https://www.youtube.com/watch?v=KgsHoJYJ4S8)
 
 - Implementation in OpenCV and Python [GitHub repo](https://github.com/OpenGenus/SIFT-Scale-Invariant-Feature-Transform)
+- Harris Corner Detection. [link](https://vovkos.github.io/doxyrest-showcase/opencv/sphinxdoc/page_tutorial_py_features_harris.html)
 
 ## Solution
 1. Scale-space extrema detection
@@ -29,11 +30,17 @@ In order to detect the local maxima and minima of D(x, y, σ), each sample point
 #### Keypoint filtering
 We are localize a many keypoints which are not relevant. We apply multiple keypoint filtering blunts:
 - **Removing low contrast features:** This is simple. If the magnitude of the intensity (i.e., without sign) at the current pixel in the DoG image (that is being checked for minima/maxima) is less than a certain value, it is rejected.
-- **Removing edges:** The idea is to calculate (hessian) two gradients at the keypoint. Both perpendicular to each other. Based on the image around the keypoint, three possibilities exist. The image around the keypoint can be:
+<br>
+<br>
+- **Removing (keypoint) edges:** The idea is to calculate [(hessian)](https://en.wikipedia.org/wiki/Hessian_matrix) two gradients at the keypoint. Both perpendicular to each other. Based on the image around the keypoint, three possibilities exist. We used [Harris Corner Detection](https://vovkos.github.io/doxyrest-showcase/opencv/sphinxdoc/page_tutorial_py_features_harris.html) for detecting flat surface, edges and corners [math solution - chapter 4.1](../_materials/sift_highlighted.pdf). The image around the keypoint can be:
   - **A flat region:** If this is the case, both gradients will be small. 
   - **An edge:** Here, one gradient will be big (perpendicular to the edge) and the other will be small (along the edge)
   - **A "corner":** Here, both gradients will be big.
 
-### 3. Keypoint assignment
+
+
+
+### 3. Keypoint assignment - orientation
+
 
 ### 4. Keypoint descriptor

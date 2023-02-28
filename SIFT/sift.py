@@ -79,5 +79,5 @@ class Sift:
 
     def key_point_filter_contrast(self,difference_of_gaussians, thr: float):
         contrast_threshold = np.abs(difference_of_gaussians[:,:,1:3]) > thr
-        # Later must by fix for dynamic size array aggregation
+        # Later must be fixed for dynamic size array aggregation
         return contrast_threshold[:,:,0] * contrast_threshold[:,:,1]
