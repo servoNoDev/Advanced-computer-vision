@@ -21,6 +21,48 @@ Lecture slides is possible to find [here](https://tinyurl.com/MaterialyPPV​).
 ### Week 2
 - SIFT full implementation 
 
-## Part 2: Viola jones detector
+## Part 2: Viola-Jones detector
+### Week 3
+- Viola-Jones fill implementation
 
 ## Part 3: CV and deep learning principles
+
+### Week 4
+- PyTorch introduction
+- DataLoader explanation
+- Image classification
+- Basic CNN explain 
+- Metrics
+- W&B
+
+### Week 5
+- NN reguralization
+
+### Week 6
+- Free :)
+
+### Week 7
+- Segmentation
+
+### Week 8
+- Data preprocessing
+- Data augumentation
+
+### Week 9
+- Build your own block
+- Transfer learning
+- Monai
+
+### Week 10
+- GAN
+
+### Week 11
+- CPU vs. GPU.
+- Parallelism 
+
+## Part 4: Pointcloud
+### Week 12
+- Introduction to pointcloud
+
+### Week 13
+- Defense of semester projects for the KKUI committee 

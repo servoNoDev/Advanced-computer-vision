@@ -34,7 +34,7 @@ tags:  Haar-like Features, Integral Images, the AdaBoost Algorithm, and the Casc
 <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*Hxwci_y3MQE81lmr2No3Ag.png">
 
 - Strong and weak classificator -> Cumulative increasing of feature number.
-- First level: If in tile is not detect one feature, tile will reject.
+- First level: If in tile is not detect one feature, tile will reject. The classifier uses only one estimator, one Haar feature. The most general estimator that lets out a minimum of false negatives. Release false positives that will be filtered out later. At this point, most of the incoming tiles end and do not look further.
 - Second lever: If in tile is not detect more then ten feature, tile wil recejt.
 - Chain rule.
 
