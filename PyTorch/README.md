@@ -19,3 +19,11 @@
 
 ## Metrics
 - https://torchmetrics.readthedocs.io/en/stable/
+
+## Dataloader
+- https://pytorch.org/tutorials/beginner/basics/data_tutorial.html
+- https://pytorch.org/tutorials/beginner/data_loading_tutorial.html
+- https://towardsdatascience.com/building-efficient-custom-datasets-in-pytorch-2563b946fd9f
+
+## Visualization
+- https://plotly.com/python/
