@@ -27,3 +27,6 @@
 
 ## Visualization
 - https://plotly.com/python/
+
+## MLOps platform - Weights & Biases
+- https://wandb.ai/site
