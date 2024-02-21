@@ -3,7 +3,7 @@ Repository for labs of Advanced Computer Vision at the Technical University of K
 The guarantor of teaching the subject is doc. Ing. Marek Bundzel, PhD.  Laboratory exercises were prepared by Ing. Maros Hliboky. Thanks to Ing. Miro Jascur, Phd. from whose work these materials are inspired.
 
 ## Lectures
-Lecture slides is available [here](https://tinyurl.com/MaterialyPPV).
+Lecture slides are available [here](https://tinyurl.com/MaterialyPPV).
 
 ## Labs
 ## Prerequisites
@@ -26,6 +26,8 @@ Lecture slides is available [here](https://tinyurl.com/MaterialyPPV).
 | 12       | 2.5.2024  | 9:10     | V4_010   |                       |           |
 | 13       | 9.5.2024  | 9:10     | V4_010   | Final presentations   |           |
 
+
+## Assignments
 
 
 

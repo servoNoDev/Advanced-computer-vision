@@ -17,6 +17,7 @@ class Sift:
         self.scale_space_global_array = []
         self.dog_global_array = []
         self.octave_keypoints_global_array = []
+        self.octave_scale_multiplier_list = []
 
     def octave_processing(self, image, octave_scale_multiplier, sigmas, visualization=False):
         """
@@ -29,8 +30,10 @@ class Sift:
             sigmas (list): List of sigma values for Gaussian blurring at different scales.
             visualization (bool, optional): Whether to visualize intermediate steps. Defaults to False.
         """
+        self.octave_scale_multiplier_list.append(octave_scale_multiplier)
+        # print(image.shape)
         img_rescaled = transform.rescale(image, octave_scale_multiplier)
-
+        # print(img_rescaled.shape)
         # Generate scale space
         scale_space_array = np.zeros(shape=(img_rescaled.shape[0], img_rescaled.shape[1], len(sigmas)))
         for i, sigma in enumerate(sigmas):
@@ -51,9 +54,9 @@ class Sift:
 
         # Find keypoints
         keypoints = self.find_keypoints(dog_array)
-
-        keypoints = transform.rescale(keypoints, 1/octave_scale_multiplier)
-
+        # print(keypoints.shape)
+        # keypoints = transform.rescale(keypoints, 1/octave_scale_multiplier)
+        # print(keypoints.shape)
         # Store keypoints
         self.octave_keypoints_global_array.append(keypoints)
 
@@ -132,7 +135,7 @@ class Sift:
         plt.show()
 
     @staticmethod
-    def key_point_filter_image_frame(img_shape):
+    def key_point_filter_image_frame(img_shape,scale_ratio):
         """
         Generate a mask for filtering keypoints near the image frame.
 
@@ -143,11 +146,14 @@ class Sift:
             np.ndarray: Mask for filtering keypoints.
         """
         mask = np.zeros(shape=img_shape)
+        # mask = np.zeros(shape=(int(img_shape[0]*scale_ratio),int(img_shape[1]*scale_ratio)))
+        # print(mask.shape)
+
         mask[1:-1, 1:-1] = True
         return mask
 
     @staticmethod
-    def key_point_filter_contrast(difference_of_gaussians, thr: float):
+    def key_point_filter_contrast(difference_of_gaussians, octave_scale_multiplier=1, thr = 0.03):
         """
         Filter keypoints based on contrast threshold.
 
@@ -159,6 +165,104 @@ class Sift:
             np.ndarray: Binary mask indicating keypoints passing the contrast threshold.
         """
         contrast_threshold = np.abs(difference_of_gaussians[:, :, 1:3]) > thr
-        return contrast_threshold[:, :, 0] * contrast_threshold[:, :, 1]
+        ret = contrast_threshold[:, :, 0] * contrast_threshold[:, :, 1]
+        return transform.rescale(ret,  1/octave_scale_multiplier)
 
-#%%
+    @staticmethod
+    def key_point_filter_on_edges(difference_of_gaussians, octave_scale_multiplier=1,visualization=True):
+        # Calculate Hessian matrix components (second-order partial derivatives)
+        Dxx, Dxy, Dyy = hessian_matrix(difference_of_gaussians, sigma=0, order='xy')
+
+        if visualization:
+            # Visualize components of the Hessian matrix
+            plt.figure(figsize=(8, 15))
+            plt.subplot(311)
+            plt.set_cmap('hot')
+            plt.imshow(Dxx**2)  # Gradient change in the Y axis
+            plt.subplot(312)
+            plt.imshow(Dxy**2)  # Gradient change in the XY axis
+            plt.subplot(313)
+            plt.imshow(Dyy**2)  # Gradient change in the X axis
+
+        # Calculate trace and determinant of the Hessian matrix
+        trace_h = Dxx + Dyy
+        det_h = Dxx * Dyy - Dxy**2
+
+        # Compute the principal curvature ratio
+        r = 10  # Paper recommendation for threshold
+        principal_curv_ratio = trace_h**2 / det_h
+
+        # Filter out points on edges or ridges based on the principal curvature ratio
+        # Points with a principal curvature ratio below a certain threshold (r+1)^2 / r are considered as edge points
+        # print("in function")
+        # print(principal_curv_ratio.shape)
+        ret = transform.rescale(principal_curv_ratio < ((r + 1)**2) / r, 1/octave_scale_multiplier)
+        # print(ret.shape)
+        return ret
+
+    def filter_keypoints_in_octave(self, octave_index=0, visualise=True):
+        # print("TUTUTU")
+        # print(self.octave_keypoints_global_array[octave_index].shape)
+        # print(self.key_point_filter_image_frame(img_shape=self.octave_keypoints_global_array[octave_index].shape, scale_ratio=self.octave_scale_multiplier_list[octave_index]).shape)
+        # print(self.key_point_filter_contrast(self.dog_global_array[octave_index], 0.03).shape)
+        # print(self.key_point_filter_on_edges(self.dog_global_array[octave_index][:,:, 0], octave_scale_multiplier=self.octave_scale_multiplier_list[octave_index]).shape)
+        #
+        #
+        a = self.octave_keypoints_global_array[octave_index]
+        b = self.key_point_filter_image_frame(img_shape=self.octave_keypoints_global_array[octave_index].shape, scale_ratio=self.octave_scale_multiplier_list[octave_index])
+        c = self.key_point_filter_contrast(self.dog_global_array[octave_index],octave_scale_multiplier=self.octave_scale_multiplier_list[octave_index], thr=0.05 )
+        d = self.key_point_filter_on_edges(self.dog_global_array[octave_index][:,:, 0] , octave_scale_multiplier=self.octave_scale_multiplier_list[octave_index], visualization=False)
+        # print(a.shape,b.shape,c.shape,d.shape)
+        my_best_keypoints = a * b * c * d
+
+
+        if visualise:
+            rr, cc = np.where(my_best_keypoints)
+            fig, ax = plt.subplots(figsize=(30,30))
+            ax.imshow(self.image, cmap="gray")
+            for r,c in zip(rr,cc):
+                circle1 = plt.Circle((c, r), 2, color='g', clip_on=False)
+                ax.add_patch(circle1)
+
+        return my_best_keypoints
+    # @staticmethod
+    def get_keypoints_histgoram(self,keypoints, octave_index=0, visualise=True):
+        L = self.scale_space_global_array[octave_index]
+
+        dLdx = np.pad((L[1:L.shape[0], :] - L[0:L.shape[0]-1, :]), ((1, 0), (0, 0), (0, 0)), mode='constant', constant_values=(0, 0))
+        dLdy = np.pad((L[:, 1:L.shape[1]] - L[:, 0:L.shape[1]-1]), ((0, 0), (1, 0), (0, 0)), mode='constant', constant_values=(0, 0))
+
+        mag  = np.sqrt(dLdx ** 2 + dLdy ** 2)
+        orientation  = np.arctan2(dLdy, dLdx)
+        if visualise:
+            plt.figure(figsize=(20, 20))
+            plt.subplot(121)
+            plt.imshow(mag[:,:,1])
+            plt.title("Magnitude")
+            plt.subplot(122)
+            plt.imshow(orientation[:,:,1])
+            plt.title("Orientation")
+            plt.show()
+
+        rr, cc = np.where(keypoints)
+        points_hist = []
+        for r, c in zip(rr,cc):
+            mag_around_point = mag[r-1:r+2,c-1:c+2]
+            orientation_around_point = orientation[r-1:r+2,c-1:c+2]
+
+            # mag_around_point = mag[r-3:r+4,c-3:c+4]
+            # orientation_around_point = orientation[r-3:r+4,c-3:c+4]
+            # plt.figure()
+
+            hist,bin_edges = np.histogram(np.rad2deg(orientation_around_point.ravel())+180,bins=np.arange(0,360,10),weights=mag_around_point.ravel())
+            # hist,bin_edges = np.histogram(np.rad2deg(orientation_around_point.ravel())+180,bins=np.arange(0,360,10))
+
+            points_hist.append(np.array(hist, dtype=np.float32))
+            # print(hist)
+            # plt.bar(bin_edges[:-1], hist, width = 10)
+            # plt.title("Orientation for point row: {} column: {}".format(r,c))
+            # plt.axhline(0.8*np.max(hist),color='red')
+
+        points_hist = np.array(points_hist)
+        return points_hist
+
