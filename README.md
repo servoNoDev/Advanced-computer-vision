@@ -28,6 +28,28 @@ Lecture slides are available [here](https://tinyurl.com/MaterialyPPV).
 
 
 ## Assignments
+- Semester project
+- Consultations are possible for the project
+- Submission requirements include a presentation, an article, functional code/demo
+- Weekly reports are a prerequisite
+
+### Guatemala Mayan glyph
+Redrawing Mayan glyphs from a 3D model of a stela into a 2D descriptive mask.
+
+### AR Body Chest Detection
+Localization of the patient's chest from a video image stream
+Working with an AR headset Oculus MetaQuest 3
+
+### Lung Point Detection
+Detection of time-dependent phenomena on lung ultrasound data
+Using classical methods combined with deep neural networks
+
+###  Diffusion Model for Image Generation
+Creating a generative image model to expand the dataset
+
+### Lung Time Feature Extractor
+Detection of time-dependent phenomena on lung ultrasound data
+Designing a custom layer of a neural network for extracting time-dependent phenomena
 
 
 
