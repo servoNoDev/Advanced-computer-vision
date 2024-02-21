@@ -10,21 +10,21 @@ Lecture slides are available [here](https://tinyurl.com/MaterialyPPV).
 - Completing the computer vision course is a big advantage. Link for code snippets from lab is [here](https://github.com/servoNoDev/Computer-vision)
 
 ### Labs schedule
-| **Week** | **Date**  | **Time** | **Room** | **Topic**             | **Notes** |
-|----------|-----------|----------|----------|-----------------------|-----------|
-| 01       | 15.2.2024 | 9:10     | V4_010   | SIFT (part 1)         |           |
-| 02       | 22.2.2024 | 9:10     | V4_010   | SIFT (part 2)         |           |
-| 03       | 29.2.2024 | 9:10     | V4_010   | Viola Jones           |           |
-| 04       | 7.3.2024  | 9:10     | V4_010   |                       |           |
-| 05       | 14.3.2024 | 9:10     | V4_010   |                       |           |
-| 06       | 21.3.2024 | 9:10     | V4_010   |                       |           |
-| 07       | 28.3.2024 | 9:10     | V4_010   |                       |           |
-| 08       | 4.4.2024  |          |          | Free (public holiday) |           |
-| 09       | 11.4.2024 | 9:10     | V4_010   |                       |           |
-| 10       | 18.4.2024 | 9:10     | V4_010   |                       |           |
-| 11       | 25.4.2024 | 9:10     | V4_010   |                       |           |
-| 12       | 2.5.2024  | 9:10     | V4_010   |                       |           |
-| 13       | 9.5.2024  | 9:10     | V4_010   | Final presentations   |           |
+| **Week** | **Date**  | **Time** | **Room** | **Topic**                 | **Notes** |
+|----------|-----------|----------|----------|---------------------------|-----------|
+| 01       | 15.2.2024 | 9:10     | V4_010   | SIFT (part 1)             |           |
+| 02       | 22.2.2024 | 9:10     | V4_010   | SIFT (part 2)             |           |
+| 03       | 29.2.2024 | 9:10     | V4_010   | Viola Jones               |           |
+| 04       | 7.3.2024  | 9:10     | V4_010   | CNN recap                 |           |
+| 05       | 14.3.2024 | 9:10     | V4_010   | CNN advanced              |           |
+| 06       | 21.3.2024 | 9:10     | V4_010   | ViT - Vision Transformers |           |
+| 07       | 28.3.2024 | 9:10     | V4_010   | VAE                       |           |
+| 08       | 4.4.2024  |          |          | Free (public holiday)     |           |
+| 09       | 11.4.2024 | 9:10     | V4_010   | GAN                       |           |
+| 10       | 18.4.2024 | 9:10     | V4_010   | GAN                       |           |
+| 11       | 25.4.2024 | 9:10     | V4_010   | Diffusion models          |           |
+| 12       | 2.5.2024  | 9:10     | V4_010   | Diffusion models          |           |
+| 13       | 9.5.2024  | 9:10     | V4_010   | Final presentations       |           |
 
 
 ## Assignments
