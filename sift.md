@@ -11,6 +11,8 @@
 - Implementation in OpenCV and Python [GitHub repo](https://github.com/OpenGenus/SIFT-Scale-Invariant-Feature-Transform)
 - Harris Corner Detection. [link](https://vovkos.github.io/doxyrest-showcase/opencv/sphinxdoc/page_tutorial_py_features_harris.html)
 
+- https://medium.com/@deepanshut041/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40
+- https://datahacker.rs/feature-matching-methods-comparison-in-opencv/
 ## Solution
 1. Scale-space extrema detection
 2. Keypoint localization

@@ -3,29 +3,53 @@ Repository for labs of Advanced Computer Vision at the Technical University of K
 The guarantor of teaching the subject is doc. Ing. Marek Bundzel, PhD.  Laboratory exercises were prepared by Ing. Maros Hliboky. Thanks to Ing. Miro Jascur, Phd. from whose work these materials are inspired.
 
 ## Lectures
-Lecture slides is available [here](https://tinyurl.com/MaterialyPPV).
+Lecture slides are available [here](https://tinyurl.com/MaterialyPPV).
 
 ## Labs
 ## Prerequisites
 - Completing the computer vision course is a big advantage. Link for code snippets from lab is [here](https://github.com/servoNoDev/Computer-vision)
 
 ### Labs schedule
-| **Week** | **Date**  | **Time** | **Room** | **Topic**             | **Notes** |
-|----------|-----------|----------|----------|-----------------------|-----------|
-| 01       | 15.2.2024 | 9:10     | V4_010   | SIFT (part 1)         |           |
-| 02       | 22.2.2024 | 9:10     | V4_010   | SIFT (part 2)         |           |
-| 03       | 29.2.2024 | 9:10     | V4_010   | Viola Jones           |           |
-| 04       | 7.3.2024  | 9:10     | V4_010   |                       |           |
-| 05       | 14.3.2024 | 9:10     | V4_010   |                       |           |
-| 06       | 21.3.2024 | 9:10     | V4_010   |                       |           |
-| 07       | 28.3.2024 | 9:10     | V4_010   |                       |           |
-| 08       | 4.4.2024  |          |          | Free (public holiday) |           |
-| 09       | 11.4.2024 | 9:10     | V4_010   |                       |           |
-| 10       | 18.4.2024 | 9:10     | V4_010   |                       |           |
-| 11       | 25.4.2024 | 9:10     | V4_010   |                       |           |
-| 12       | 2.5.2024  | 9:10     | V4_010   |                       |           |
-| 13       | 9.5.2024  | 9:10     | V4_010   | Final presentations   |           |
+| **Week** | **Date**  | **Time** | **Room** | **Topic**                 | **Notes** |
+|----------|-----------|----------|----------|---------------------------|-----------|
+| 01       | 15.2.2024 | 9:10     | V4_010   | SIFT (part 1)             |           |
+| 02       | 22.2.2024 | 9:10     | V4_010   | SIFT (part 2)             |           |
+| 03       | 29.2.2024 | 9:10     | V4_010   | Viola Jones               |           |
+| 04       | 7.3.2024  | 9:10     | V4_010   | CNN recap                 |           |
+| 05       | 14.3.2024 | 9:10     | V4_010   | CNN advanced              |           |
+| 06       | 21.3.2024 | 9:10     | V4_010   | ViT - Vision Transformers |           |
+| 07       | 28.3.2024 | 9:10     | V4_010   | VAE                       |           |
+| 08       | 4.4.2024  |          |          | Free (public holiday)     |           |
+| 09       | 11.4.2024 | 9:10     | V4_010   | GAN                       |           |
+| 10       | 18.4.2024 | 9:10     | V4_010   | GAN                       |           |
+| 11       | 25.4.2024 | 9:10     | V4_010   | Diffusion models          |           |
+| 12       | 2.5.2024  | 9:10     | V4_010   | Diffusion models          |           |
+| 13       | 9.5.2024  | 9:10     | V4_010   | Final presentations       |           |
 
+
+## Assignments
+- Semester project
+- Consultations are possible for the project
+- Submission requirements include a presentation, an article, functional code/demo
+- Weekly reports are a prerequisite
+
+### Guatemala Mayan glyph
+Redrawing Mayan glyphs from a 3D model of a stela into a 2D descriptive mask.
+
+### AR Body Chest Detection
+Localization of the patient's chest from a video image stream
+Working with an AR headset Oculus MetaQuest 3
+
+### Lung Point Detection
+Detection of time-dependent phenomena on lung ultrasound data
+Using classical methods combined with deep neural networks
+
+###  Diffusion Model for Image Generation
+Creating a generative image model to expand the dataset
+
+### Lung Time Feature Extractor
+Detection of time-dependent phenomena on lung ultrasound data
+Designing a custom layer of a neural network for extracting time-dependent phenomena
 
 
 
