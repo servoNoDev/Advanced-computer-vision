@@ -201,16 +201,9 @@ class Sift:
         return ret
 
     def filter_keypoints_in_octave(self, octave_index=0, visualise=True):
-        # print("TUTUTU")
-        # print(self.octave_keypoints_global_array[octave_index].shape)
-        # print(self.key_point_filter_image_frame(img_shape=self.octave_keypoints_global_array[octave_index].shape, scale_ratio=self.octave_scale_multiplier_list[octave_index]).shape)
-        # print(self.key_point_filter_contrast(self.dog_global_array[octave_index], 0.03).shape)
-        # print(self.key_point_filter_on_edges(self.dog_global_array[octave_index][:,:, 0], octave_scale_multiplier=self.octave_scale_multiplier_list[octave_index]).shape)
-        #
-        #
         a = self.octave_keypoints_global_array[octave_index]
         b = self.key_point_filter_image_frame(img_shape=self.octave_keypoints_global_array[octave_index].shape, scale_ratio=self.octave_scale_multiplier_list[octave_index])
-        c = self.key_point_filter_contrast(self.dog_global_array[octave_index],octave_scale_multiplier=self.octave_scale_multiplier_list[octave_index], thr=0.05 )
+        c = self.key_point_filter_contrast(self.dog_global_array[octave_index],octave_scale_multiplier=self.octave_scale_multiplier_list[octave_index], thr=0.05)
         d = self.key_point_filter_on_edges(self.dog_global_array[octave_index][:,:, 0] , octave_scale_multiplier=self.octave_scale_multiplier_list[octave_index], visualization=False)
         # print(a.shape,b.shape,c.shape,d.shape)
         my_best_keypoints = a * b * c * d
@@ -232,8 +225,8 @@ class Sift:
         dLdx = np.pad((L[1:L.shape[0], :] - L[0:L.shape[0]-1, :]), ((1, 0), (0, 0), (0, 0)), mode='constant', constant_values=(0, 0))
         dLdy = np.pad((L[:, 1:L.shape[1]] - L[:, 0:L.shape[1]-1]), ((0, 0), (1, 0), (0, 0)), mode='constant', constant_values=(0, 0))
 
-        mag  = np.sqrt(dLdx ** 2 + dLdy ** 2)
-        orientation  = np.arctan2(dLdy, dLdx)
+        mag = np.sqrt(dLdx ** 2 + dLdy ** 2)
+        orientation = np.arctan2(dLdy, dLdx)
         if visualise:
             plt.figure(figsize=(20, 20))
             plt.subplot(121)
