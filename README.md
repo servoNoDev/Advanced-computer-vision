@@ -45,6 +45,7 @@ Detection of time-dependent phenomena on lung ultrasound data
 Using classical methods combined with deep neural networks
 
 [Optical flow python](https://www.geeksforgeeks.org/python-opencv-dense-optical-flow/)   
+[Papar 0 - What is lung sliding absent, lung sliding present, lung point](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8439137/)   
 [Paper 1 - Convolutional Neural Network and Optical Flow](https://www.mdpi.com/2072-4292/14/13/2994)   
 [Paper 2 - RAFT: Optical Flow estimation using Deep Learning](https://learnopencv.com/optical-flow-using-deep-learning-raft/)  
 [Paper 3 - Optical Flow based classification of periodical heart events on ultrasound image sets](https://www.duo.uio.no/bitstream/handle/10852/60017/5/Optical-Flow-based-classification-of-periodical-heart-events-on-ultrasound-image-sets.pdf)  
