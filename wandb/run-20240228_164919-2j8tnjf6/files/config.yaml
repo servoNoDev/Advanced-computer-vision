@@ -1,0 +1,42 @@
+wandb_version: 1
+
+Model:
+  desc: null
+  value: Unet
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.13.11
+    framework: torch
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    python_version: 3.9.16
+    start_time: 1709135359.987428
+    t:
+      1:
+      - 1
+      - 5
+      - 41
+      - 53
+      - 55
+      3:
+      - 16
+      - 23
+      4: 3.9.16
+      5: 0.13.11
+      8:
+      - 1
+      - 4
+      - 5
+fold:
+  desc: null
+  value: 0
+learning_rate:
+  desc: null
+  value: 0.0001
+loss_type:
+  desc: null
+  value: BCE
+type:
+  desc: null
+  value: Pleura

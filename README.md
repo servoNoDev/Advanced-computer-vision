@@ -53,7 +53,11 @@ Using classical methods combined with deep neural networks
 
 
 ###  Diffusion Model for Image Generation
-Creating a generative image model to expand the dataset
+Creating a generative image model to expand the dataset   
+[YouTube - Diffusion models from scratch in PyTorch](https://www.youtube.com/watch?v=a4Yfz2FxXiY)   
+[YouTube - Diffusion Models | PyTorch Implementation (conditional)](https://www.youtube.com/watch?v=TBCRlnwJtZU)   
+[GitHub - Diffusion Models](https://github.com/dome272/Diffusion-Models-pytorch)   
+[YouTube - Efficient Text-to-Image Training](https://www.youtube.com/watch?v=ogJsCPqgFMk)
 
 ### Lung Time Feature Extractor
 Detection of time-dependent phenomena on lung ultrasound data
