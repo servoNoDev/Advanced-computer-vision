@@ -22,7 +22,8 @@ class JaccardLoss(nn.Module):
         # Calculate the intersection of predictions and targets
         intersection = torch.sum(predictions * targets)
         # Calculate the union of predictions and targets
-        union = torch.sum(predictions + targets) - intersection
+        union = torch.sum(predictions) + torch.sum(targets) - torch.sum(intersection)
+        union = torch.sum(predictions + targets) - intersection # Dominik ajajaj
         # Calculate the Jaccard index with a small epsilon to avoid division by zero
         jaccard = (intersection + 1e-5) / (union + 1e-5)
         # Calculate the Jaccard loss

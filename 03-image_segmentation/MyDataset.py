@@ -165,38 +165,3 @@ class USGDatasetMultiClassWithFold(Dataset):
             mask = self.transform(mask)
 
         return [image, mask]
-
-    def show_random_sample(self):
-    # Randomly select an index from the dataset
-        idx = torch.randint(0, len(loader.dataset), (1,))
-        # print(int(idx))
-        # Get the random sample from the dataset
-        sample = self.dataset[int(idx)]
-        
-        # # Extract the input and target from the sample
-        # inputs, masks = sample
-        
-        # # Randomly select an index within the batch
-        # idx = torch.randint(0, inputs.shape[0], (1,))
-        
-
-        # Assuming inputs[0] contains the image and inputs[1] contains the mask
-        image = sample[0].permute(1, 2, 0)  # Assuming inputs[0] is in the format (C, H, W), permute to (H, W, C)
-        mask = sample[1].permute(1, 2, 0)   # Assuming inputs[1] is in the format (C, H, W), permute to (H, W, C)
-
-        
-        # Display the image and mask
-        plt.figure(figsize=(10, 5))
-        
-        plt.subplot(1, 2, 1)
-        plt.imshow(image)
-        plt.title('Image')
-        plt.axis('off')
-
-        plt.subplot(1, 2, 2)
-        plt.imshow(mask)
-        plt.title('Mask')
-        plt.axis('off')
-        
-        plt.show()
-
