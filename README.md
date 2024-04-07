@@ -6,7 +6,7 @@ The guarantor of teaching the subject is doc. Ing. Marek Bundzel, PhD.  Laborato
 Lecture slides are available [here](https://tinyurl.com/MaterialyPPV).
 
 ## Labs
-## Prerequisites
+### Prerequisites
 - Completing the computer vision course is a big advantage. Link for code snippets from lab is [here](https://github.com/servoNoDev/Computer-vision)
 
 ### Labs schedule
