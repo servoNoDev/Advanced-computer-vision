@@ -131,3 +131,5 @@ dmypy.json
 
 /data
 /05-gan/data
+/05-gan/generated_lab_week05
+/08-gan_conditional/generated_lab_week08
