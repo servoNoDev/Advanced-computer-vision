@@ -25,7 +25,7 @@ Lecture slides are available [here](https://tinyurl.com/MaterialyPPV).
 | 11       | 18.4.2024 | 9:10     | V4_010   | Recap                     |           |
 | 12       | 2.5.2024  |          |          | Free                      | Dekanat prelozil vyucbu |
 | 13       | 7.5.2024  | 15:10    | UVT LUI  | Final presentations       |           |
-Viola Jones   
+
 
 ## Assignments
 - Semester project
