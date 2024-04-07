@@ -14,18 +14,18 @@ Lecture slides are available [here](https://tinyurl.com/MaterialyPPV).
 |----------|-----------|----------|----------|---------------------------|-----------|
 | 01       | 15.2.2024 | 9:10     | V4_010   | SIFT (part 1)             |           |
 | 02       | 22.2.2024 | 9:10     | V4_010   | SIFT (part 2)             |           |
-| 03       | 29.2.2024 | 9:10     | V4_010   | Viola Jones               |           |
-| 04       | 7.3.2024  | 9:10     | V4_010   | CNN recap                 |           |
-| 05       | 14.3.2024 | 9:10     | V4_010   | CNN advanced              |           |
-| 06       | 21.3.2024 | 9:10     | V4_010   | ViT - Vision Transformers |           |
-| 07       | 28.3.2024 | 9:10     | V4_010   | VAE                       |           |
-| 08       | 4.4.2024  |          |          | Free (public holiday)     |           |
-| 09       | 11.4.2024 | 9:10     | V4_010   | GAN                       |           |
-| 10       | 18.4.2024 | 9:10     | V4_010   | GAN                       |           |
-| 11       | 25.4.2024 | 9:10     | V4_010   | Diffusion models          |           |
-| 12       | 2.5.2024  | 9:10     | V4_010   | Diffusion models          |           |
-| 13       | 9.5.2024  | 9:10     | V4_010   | Final presentations       |           |
-
+| 03       | 29.2.2024 | 9:10     | V4_010   | U-Net Image segmentation  |           |           
+| 04       | 7.3.2024  | 9:10     | V4_010   | Auto encoders             |           |
+| 05       | 14.3.2024 | 9:10     | V4_010   | GAN                       |           |
+| 06       | 21.3.2024 | 9:10     | V4_010   | -                         | Assignments report |
+| 07       | 28.3.2024 |          |          | Free (public holiday)     |           |
+| 08       | 4.4.2024  | 9:10     |          | GAN conditional           |           |
+| 09       | 10.4.2024 | 9:10     | ??????   | Diffusion models 01       |           |
+| 10       | 17.4.2024 | 15:10    | ??????   | Diffusion models 02       |           |
+| 11       | 18.4.2024 | 9:10     | V4_010   | Recap                     |           |
+| 12       | 2.5.2024  |          | Free                                 | Dekanat prelozil vyucbu |
+| 13       | 7.5.2024  | 15:10    | UVT LUI  | Final presentations       |           |
+Viola Jones   
 
 ## Assignments
 - Semester project
