@@ -58,7 +58,7 @@ Creating a generative image model to expand the dataset
 [YouTube - Diffusion Models | PyTorch Implementation (conditional)](https://www.youtube.com/watch?v=TBCRlnwJtZU)   
 [GitHub - Diffusion Models](https://github.com/dome272/Diffusion-Models-pytorch)   
 [YouTube - Efficient Text-to-Image Training](https://www.youtube.com/watch?v=ogJsCPqgFMk)
-
+[YoutTube - What are Diffusion Models?](https://www.youtube.com/watch?v=fbLgFrlTnGU)
 ### Lung Time Feature Extractor
 Detection of time-dependent phenomena on lung ultrasound data
 Designing a custom layer of a neural network for extracting time-dependent phenomena
